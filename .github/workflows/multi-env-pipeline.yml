@@ -23,20 +23,20 @@ jobs:
   deploy-dev:
     needs: test
     if: github.ref_name == 'develop'
-    uses: ./.github/workflows/deploy.yml
+    uses: ./.github/workflows/deploy.yaml
     with:
       environment: dev
 
   deploy-staging:
     needs: test
     if: github.ref_name == 'staging'
-    uses: ./.github/workflows/deploy.yml
+    uses: ./.github/workflows/deploy.yaml
     with:
       environment: staging
 
   deploy-prod:
     needs: test
     if: github.ref_name == 'main'
-    uses: ./.github/workflows/deploy.yml
+    uses: ./.github/workflows/deploy.yaml
     with:
       environment: prod
